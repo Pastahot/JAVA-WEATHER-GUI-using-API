@@ -10,9 +10,8 @@ public class WeatherAPI {
     public static String getTemperatureAtLocation(String location) throws Exception{
 
 
-        // Using the Weatherbit API to retrieve the weather for the specified location
-        String apiKey = "77c30523f7a24c9283858b1a95629f2b";
-        String apiUrl = "https://api.weatherbit.io/v2.0/current?&city=" + location +"&key=77c30523f7a24c9283858b1a95629f2b&include=minutely"  + "&appid=" + apiKey;
+        String apiKey = "YOUR_API_KEY";
+        String apiUrl = "YOUR_API_PROVIDER=" + location +"YOUR_API_KEY"  + "&appid=" + apiKey;
         try {
             URL url = new URL(apiUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -51,7 +50,7 @@ public class WeatherAPI {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
-        throw new Exception("Nepodarilo sa zistit hodnotu pre lokaciu:" + location);
+        throw new Exception("Couldnt find a value for specific location:" + location);
     }
 }
 
